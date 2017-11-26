@@ -1,7 +1,7 @@
 {
   "name": "fast-loops",
   "version": "1.0.0",
-  "description": "A collection of small, high-performant & immutable iteration utilities for Arrays and Objects",
+  "description": "Small, performant & immutable iteration utilities for Arrays and Objects",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",

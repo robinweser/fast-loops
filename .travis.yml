@@ -5,7 +5,7 @@ script:
   - npm run check
 addons:
   code_climate:
-    repo_token: 923b8eea8dc288ced3fef24a6a878b84fb21af9f8e3332881460c963735e4590
+    repo_token: ebfef4874294aa4bf0076a5b8f23b66529d391e0aa1757f45b47bc3f035bb29e
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
 notifications:
