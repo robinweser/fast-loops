@@ -25,8 +25,7 @@ Because JavaScript's native "functional" APIs such as `forEach`, `reduce`, `map`
 * [objectFilter](#objectfilterobj-filter)
 * [objectReduce](#objectreduceobj-reducer-accumulator)
 
-### `arrayEach(arr, iterator)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
+### `arrayEach(arr, iterator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
 
 Iterates over each value in the array.<br>
 Similar to `Array.prototype.forEach`.
@@ -44,8 +43,7 @@ arrayEach([1, 2, 3], console.log)
 ```
 
 
-### `arrayFilter(arr, filter)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.4kb-brightgreen.svg">
+### `arrayFilter(arr, filter)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.4kb-brightgreen.svg">
 
 Filters an array according to the filter criteria.<br>
 Similar to `Array.prototype.filter`.
@@ -62,8 +60,7 @@ console.log(biggerThan2)
 // => [3, 4]
 ```
 
-### `arrayMap(arr, mapper)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.39kb-brightgreen.svg">
+### `arrayMap(arr, mapper)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.39kb-brightgreen.svg">
 
 Maps an array by running the mapper on each value.<br>
 Similar to `Array.prototype.map`.
@@ -74,14 +71,13 @@ Similar to `Array.prototype.map`.
 ```javascript
 import { arrayMap } from 'fast-loops'
 
-const square = arrayFilter([1, 2, 3, 4], value => value * value)
+const square = arrayMap([1, 2, 3, 4], value => value * value)
 
 console.log(square)
 // => [1, 4, 9, 16]
 ```
 
-### `arrayReduce(arr, reducer, accumulator)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
+### `arrayReduce(arr, reducer, accumulator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
 
 Reduces an array based on the accumulator.<br>
 Similar to `Array.prototype.reduce`.
@@ -99,8 +95,7 @@ console.log(sum)
 // => 10
 ```
 
-### `objectEach(obj, iterator)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
+### `objectEach(obj, iterator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
 
 Iterates over each key in the object.
 
@@ -116,8 +111,7 @@ objectEach({ 1: 10, 2: 20,  3: 30 }, console.log)
 // 30, 3, { 1: 10, 2: 20, 3: 30 }
 ```
 
-### `objectFilter(obj, filter)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
+### `objectFilter(obj, filter)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
 
 Filters an object's keys according to the filter criteria.
 
@@ -134,8 +128,7 @@ console.log(biggerThan20AndOddKey)
 // => { 3: 30 }
 ```
 
-### `objectReduce(obj, reducer, accumulator)`
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
+### `objectReduce(obj, reducer, accumulator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
 
 Reduces an object based on the accumulator.
 
