@@ -2,7 +2,7 @@
 
 A collection of small, performant & immutable iteration utilities for Arrays and Objects.
 
-<img alt="TravisCI" src="https://travis-ci.org/rofrischmann/fast-loops.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/fast-loops/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/fast-loops/badges/coverage.svg"></a> <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.46kb-brightgreen.svg"> <img alt="npm downloads" src="https://img.shields.io/npm/dm/fast-loops.svg"> <img alt="npm version" src="https://badge.fury.io/js/fast-loops.svg">
+<img alt="TravisCI" src="https://travis-ci.org/rofrischmann/fast-loops.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/fast-loops/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/fast-loops/badges/coverage.svg"></a> <img alt="gzipped size" src="https://img.shields.io/badge/gzipped+minified-0.46kb-brightgreen.svg"> <img alt="npm downloads" src="https://img.shields.io/npm/dm/fast-loops.svg"> <img alt="npm version" src="https://badge.fury.io/js/fast-loops.svg">
 
 ## Installation
 ```sh
