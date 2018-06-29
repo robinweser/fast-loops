@@ -2,7 +2,7 @@
 
 A collection of small, performant & immutable iteration utilities for Arrays and Objects.
 
-<img alt="TravisCI" src="https://travis-ci.org/rofrischmann/fast-loops.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/fast-loops/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/fast-loops/badges/coverage.svg"></a> <img alt="gzipped size" src="https://img.shields.io/badge/gzipped+minified-0.46kb-brightgreen.svg"> <img alt="npm downloads" src="https://img.shields.io/npm/dm/fast-loops.svg"> <img alt="npm version" src="https://badge.fury.io/js/fast-loops.svg">
+<img alt="TravisCI" src="https://travis-ci.org/rofrischmann/fast-loops.svg?branch=master"> <a href="https://codeclimate.com/github/rofrischmann/fast-loops/coverage"><img alt="Test Coverage" src="https://codeclimate.com/github/rofrischmann/fast-loops/badges/coverage.svg"></a> <img alt="gzipped size" src="https://img.shields.io/badge/gzipped+minified-0.47kb-brightgreen.svg"> <img alt="npm downloads" src="https://img.shields.io/npm/dm/fast-loops.svg"> <img alt="npm version" src="https://badge.fury.io/js/fast-loops.svg">
 
 ## Installation
 ```sh
@@ -26,7 +26,7 @@ Because JavaScript's native "functional" APIs such as `forEach`, `reduce`, `map`
 * [objectFind](#objectfindobj-query)
 * [objectReduce](#objectreduceobj-reducer-accumulator)
 
-### `arrayEach(arr, iterator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
+### `arrayEach(arr, iterator)`
 
 Iterates over each value in the array.<br>
 Similar to `Array.prototype.forEach`.
@@ -44,7 +44,7 @@ arrayEach([1, 2, 3], console.log)
 ```
 
 
-### `arrayFilter(arr, filter)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.4kb-brightgreen.svg">
+### `arrayFilter(arr, filter)`
 
 Filters an array according to the filter criteria.<br>
 Similar to `Array.prototype.filter`.
@@ -61,7 +61,7 @@ console.log(biggerThan2)
 // => [3, 4]
 ```
 
-### `arrayMap(arr, mapper)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.39kb-brightgreen.svg">
+### `arrayMap(arr, mapper)`
 
 Maps an array by running the mapper on each value.<br>
 Similar to `Array.prototype.map`.
@@ -78,7 +78,7 @@ console.log(square)
 // => [1, 4, 9, 16]
 ```
 
-### `arrayReduce(arr, reducer, accumulator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
+### `arrayReduce(arr, reducer, accumulator)`
 
 Reduces an array based on the accumulator.<br>
 Similar to `Array.prototype.reduce`.
@@ -96,7 +96,7 @@ console.log(sum)
 // => 10
 ```
 
-### `objectEach(obj, iterator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
+### `objectEach(obj, iterator)`
 
 Iterates over each key in the object.
 
@@ -112,7 +112,7 @@ objectEach({ 1: 10, 2: 20, 3: 30 }, console.log)
 // 30, 3, { 1: 10, 2: 20, 3: 30 }
 ```
 
-### `objectFilter(obj, filter)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
+### `objectFilter(obj, filter)`
 
 Filters an object's keys according to the filter criteria.
 
@@ -129,7 +129,7 @@ console.log(biggerThan20AndOddKey)
 // => { 3: 30 }
 ```
 
-### `objectFind(obj, query)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
+### `objectFind(obj, query)`
 
 Tries to find a key-value pair that matches the query.<br>
 Returns the matching key or `undefined` if none matches.<br>
@@ -142,13 +142,13 @@ It's like `Array.prototype.find` but for objects.
 import { objectFind } from 'fast-loops'
 
 const query = (value, key) => value > 20 && parseInt(key) % 2 === 0
-const biggerThan20AndEvenKey = objectFilter({ 1: 10, 2: 20, 3: 30, 4: 40 }, query)
+const biggerThan20AndEvenKey = objectFind({ 1: 10, 2: 20, 3: 30, 4: 40 }, query)
 
 console.log(biggerThan20AndEvenKey)
 // => "4"
 ```
 
-### `objectReduce(obj, reducer, accumulator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
+### `objectReduce(obj, reducer, accumulator)`
 
 Reduces an object based on the accumulator.
 
