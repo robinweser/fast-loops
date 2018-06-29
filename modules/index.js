@@ -4,6 +4,7 @@ import arrayMap from './arrayMap'
 import arrayReduce from './arrayReduce'
 import objectEach from './objectEach'
 import objectFilter from './objectFilter'
+import objectFind from './objectFind'
 import objectReduce from './objectReduce'
 
 export {
@@ -13,5 +14,6 @@ export {
   arrayReduce,
   objectEach,
   objectFilter,
+  objectFind,
   objectReduce,
 }

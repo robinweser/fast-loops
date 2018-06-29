@@ -23,6 +23,7 @@ Because JavaScript's native "functional" APIs such as `forEach`, `reduce`, `map`
 * [arrayReduce](#arrayreducearr-reducer-accumulator)
 * [objectEach](#objecteachobj-iterator)
 * [objectFilter](#objectfilterobj-filter)
+* [objectFind](#objectfindobj-query)
 * [objectReduce](#objectreduceobj-reducer-accumulator)
 
 ### `arrayEach(arr, iterator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.38kb-brightgreen.svg">
@@ -105,7 +106,7 @@ Iterates over each key in the object.
 ```javascript
 import { objectEach } from 'fast-loops'
 
-objectEach({ 1: 10, 2: 20,  3: 30 }, console.log)
+objectEach({ 1: 10, 2: 20, 3: 30 }, console.log)
 // 10, 1, { 1: 10, 2: 20, 3: 30 }
 // 20, 2, { 1: 10, 2: 20, 3: 30 }
 // 30, 3, { 1: 10, 2: 20, 3: 30 }
@@ -122,10 +123,29 @@ Filters an object's keys according to the filter criteria.
 import { objectFilter } from 'fast-loops'
 
 const filter = (value, key) => value > 20 && parseInt(key) % 2 !== 0
-const biggerThan20AndOddKey = objectFilter({ 1: 10, 2: 20,  3: 30, 4: 40 }, filter)
+const biggerThan20AndOddKey = objectFilter({ 1: 10, 2: 20, 3: 30, 4: 40 }, filter)
 
 console.log(biggerThan20AndOddKey)
 // => { 3: 30 }
+```
+
+### `objectFind(obj, query)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
+
+Tries to find a key-value pair that matches the query.<br>
+Returns the matching key or `undefined` if none matches.<br>
+It's like `Array.prototype.find` but for objects.
+
+1. `obj` (*Object*): The object that gets queried
+2. `query` (*Function*): The query method with the signature `(value, key, obj) => boolean`.
+
+```javascript
+import { objectFind } from 'fast-loops'
+
+const query = (value, key) => value > 20 && parseInt(key) % 2 === 0
+const biggerThan20AndEvenKey = objectFilter({ 1: 10, 2: 20, 3: 30, 4: 40 }, query)
+
+console.log(biggerThan20AndEvenKey)
+// => "4"
 ```
 
 ### `objectReduce(obj, reducer, accumulator)` <img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.37kb-brightgreen.svg">
@@ -139,7 +159,7 @@ Reduces an object based on the accumulator.
 ```javascript
 import { objectReduce } from 'fast-loops'
 
-const sumOfValues = objectReduce({ 1: 10, 2: 20,  3: 30 }, (out, value) => out + value, 0)
+const sumOfValues = objectReduce({ 1: 10, 2: 20, 3: 30 }, (out, value) => out + value, 0)
 
 console.log(sumOfValues)
 // => 60
