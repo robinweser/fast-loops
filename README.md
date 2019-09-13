@@ -222,7 +222,7 @@ const base = {
     foo: 2
   }
 }
-const mergedObj = objectRenameKeys(base, { baz: 3 }, { bar: { foo: 3 }})
+const mergedObj = objectMergeDeep(base, { baz: 3 }, { bar: { foo: 3 }})
 
 console.log(mergedObj)
 // => { foo: 1, bar: { foo: 3 }, baz: 3 }
