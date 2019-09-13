@@ -5,7 +5,7 @@ describe('objectMap', () => {
     expect(
       objectMap(
         { 1: 10, 2: 20, 3: 30, 4: 40 },
-        (value, key) => value + parseInt(key),
+        (value, key) => value + parseInt(key, 10),
         0
       )
     ).toEqual({
