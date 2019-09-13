@@ -24,7 +24,10 @@ Because JavaScript's native "functional" APIs such as `forEach`, `reduce`, `map`
 * [objectEach](#objecteachobj-iterator)
 * [objectFilter](#objectfilterobj-filter)
 * [objectFind](#objectfindobj-query)
+* [objectMap](#objectmapobj-mapper)
 * [objectReduce](#objectreduceobj-reducer-accumulator)
+* [objectRenameKeys](#objectrenamekeysobj-keys)
+* [objectMergeDeep](#objectmergedeepbase-objs)
 
 ### `arrayEach(arr, iterator)`
 
@@ -50,7 +53,7 @@ Filters an array according to the filter criteria.<br>
 Similar to `Array.prototype.filter`.
 
 1. `arr` (*Array*): The array that gets filtered
-2. `filter` (*Function*): The filter method with the signature `(value, index, length, arr) => boolean`.
+2. `filter` (*Function*): The filter method with the signature `(value, index, length, arr) => boolean`
 
 ```javascript
 import { arrayFilter } from 'fast-loops'
@@ -67,7 +70,7 @@ Maps an array by running the mapper on each value.<br>
 Similar to `Array.prototype.map`.
 
 1. `arr` (*Array*): The array that gets mapped
-2. `mapper` (*Function*): The mapping method with the signature `(value, index, length, arr) => any`.
+2. `mapper` (*Function*): The mapping method with the signature `(value, index, length, arr) => newValue`
 
 ```javascript
 import { arrayMap } from 'fast-loops'
@@ -84,7 +87,7 @@ Reduces an array based on the accumulator.<br>
 Similar to `Array.prototype.reduce`.
 
 1. `arr` (*Array*): The array that gets reduced
-2. `reducer` (*Function*): The reducer method with the signature `(accumulator, value, index, length, arr) => accumulator`.
+2. `reducer` (*Function*): The reducer method with the signature `(accumulator, value, index, length, arr) => accumulator`
 3. `accumulator` (*any*): The initial accumulator value
 
 ```javascript
@@ -117,7 +120,7 @@ objectEach({ 1: 10, 2: 20, 3: 30 }, console.log)
 Filters an object's keys according to the filter criteria.
 
 1. `obj` (*Object*): The object that gets filtered
-2. `filter` (*Function*): The filter method with the signature `(value, key, obj) => boolean`.
+2. `filter` (*Function*): The filter method with the signature `(value, key, obj) => boolean`
 
 ```javascript
 import { objectFilter } from 'fast-loops'
@@ -136,7 +139,7 @@ Returns the matching key or `undefined` if none matches.<br>
 It's like `Array.prototype.find` but for objects.
 
 1. `obj` (*Object*): The object that gets queried
-2. `query` (*Function*): The query method with the signature `(value, key, obj) => boolean`.
+2. `query` (*Function*): The query method with the signature `(value, key, obj) => boolean`
 
 ```javascript
 import { objectFind } from 'fast-loops'
@@ -148,12 +151,31 @@ console.log(biggerThan20AndEvenKey)
 // => "4"
 ```
 
+
+### `objectMap(obj, mapper)`
+
+Maps an object by running the `mapper` on each value.<br>
+Similar to `Object.keys(obj).map(mapper)`.
+
+
+1. `obj` (*Object*): The object that gets reduced
+2. `mapper` (*Function*): The mapper method with the signature `(value, key, obj) => newValue`
+
+```javascript
+import { objectMap } from 'fast-loops'
+
+const mapped = objectMap({ 1: 10, 2: 20, 3: 30 }, (value, key) => value + parseInt(key))
+
+console.log(mapped)
+// => { 1: 11, 2: 22, 3: 33 }
+```
+
 ### `objectReduce(obj, reducer, accumulator)`
 
 Reduces an object based on the accumulator.
 
 1. `obj` (*Object*): The object that gets reduced
-2. `reducer` (*Function*): The reducer method with the signature `(accumulator, value, key, obj) => accumulator`.
+2. `reducer` (*Function*): The reducer method with the signature `(accumulator, value, key, obj) => accumulator`
 3. `accumulator` (*any*): The initial accumulator value
 
 ```javascript
@@ -163,6 +185,47 @@ const sumOfValues = objectReduce({ 1: 10, 2: 20, 3: 30 }, (out, value) => out + 
 
 console.log(sumOfValues)
 // => 60
+```
+
+### `objectRenameKeys(obj, keys)`
+
+Renames object keys.
+
+> Uses [objectReduce](#objectreduceobj-reducer-accumulator) under the hood.
+
+1. `obj` (*Object*): The object that gets reduced
+2. `keys` (*Object*): The keys mapping an old key to a new key
+
+```javascript
+import { objectRenameKeys } from 'fast-loops'
+
+const renamedObj = objectRenameKeys({ foo: 1, bar: 2 }, { foo: "baz" })
+
+console.log(sumOfValues)
+// => { baz: 1, bar: 2 }
+```
+
+
+### `objectMergeDeep(base, ...objs)`
+
+Recursively merges objects into a base object.
+
+1. `base` (*Object*): The base object which is changed
+2. `objs` (*Array\<Object\>*): A list of objects to be merged into the base object
+
+```javascript
+import { objectMergeDeep } from 'fast-loops'
+
+const base = {
+  foo: 1,
+  bar: {
+    foo: 2
+  }
+}
+const mergedObj = objectRenameKeys(base, { baz: 3 }, { bar: { foo: 3 }})
+
+console.log(mergedObj)
+// => { foo: 1, bar: { foo: 3 }, baz: 3 }
 ```
 
 ## Direct Imports

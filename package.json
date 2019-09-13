@@ -1,6 +1,6 @@
 {
   "name": "fast-loops",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small, performant & immutable iteration utilities for Arrays and Objects",
   "main": "lib/index.js",
   "module": "es/index.js",

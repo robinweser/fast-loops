@@ -1,5 +1,5 @@
 /* @flow */
-export default function objectReducer(
+export default function objectReduce(
   obj: Object,
   reducer: Function,
   initialValue: any
