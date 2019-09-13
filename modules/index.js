@@ -5,7 +5,10 @@ import arrayReduce from './arrayReduce'
 import objectEach from './objectEach'
 import objectFilter from './objectFilter'
 import objectFind from './objectFind'
+import objectMap from './objectMap'
 import objectReduce from './objectReduce'
+import objectRenameKeys from './objectRenameKeys'
+import objectMergeDeep from './objectMergeDeep'
 
 export {
   arrayEach,
@@ -15,5 +18,8 @@ export {
   objectEach,
   objectFilter,
   objectFind,
+  objectMap,
   objectReduce,
+  objectRenameKeys,
+  objectMergeDeep,
 }
