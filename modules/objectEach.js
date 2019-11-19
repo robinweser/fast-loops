@@ -1,5 +1,4 @@
-/* @flow */
-export default function objectEach(obj: Object, iterator: Function): void {
+export default function objectEach(obj, iterator) {
   for (const key in obj) {
     iterator(obj[key], key, obj)
   }

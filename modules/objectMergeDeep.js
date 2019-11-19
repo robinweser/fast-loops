@@ -1,8 +1,4 @@
-/* @flow */
-export default function objectMergeDeep(
-  base: Object,
-  ...objs: Array<Object>
-): Object {
+export default function objectMergeDeep(base, ...objs) {
   for (let i = 0, len = objs.length; i < len; ++i) {
     const obj = objs[i]
 

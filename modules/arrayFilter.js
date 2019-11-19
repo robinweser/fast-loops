@@ -1,8 +1,4 @@
-/* @flow */
-export default function arrayFilter(
-  arr: Array<any>,
-  filter: Function
-): Array<any> {
+export default function arrayFilter(arr, filter) {
   const filteredArr = []
 
   for (let i = 0, len = arr.length; i < len; ++i) {

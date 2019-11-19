@@ -1,5 +1,4 @@
-/* @flow */
-export default function objectFilter(obj: Object, filter: Function): Object {
+export default function objectFilter(obj, filter) {
   const filteredObj = {}
 
   for (const key in obj) {

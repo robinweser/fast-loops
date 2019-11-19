@@ -1,5 +1,4 @@
-/* @flow */
-export default function objectMap(obj: Object, mapper: Function): Object {
+export default function objectMap(obj, mapper) {
   const mappedObj = {}
 
   for (const key in obj) {

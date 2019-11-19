@@ -1,7 +1,6 @@
-/* @flow */
 import objectReduce from './objectReduce'
 
-export default function objectRenameKeys(obj: Object, keys: Object): Object {
+export default function objectRenameKeys(obj, keys) {
   return objectReduce(
     obj,
     (newObj, value, key) => {
