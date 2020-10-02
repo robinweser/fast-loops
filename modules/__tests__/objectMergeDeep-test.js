@@ -50,4 +50,21 @@ describe('objectMergeDeep', () => {
       },
     })
   })
+
+  it('should deep merge two object with new keys', () => {
+    expect(
+      objectMergeDeep(
+        {},
+        {
+          foo: {
+            bar: 1,
+          },
+        }
+      )
+    ).toEqual({
+      foo: {
+        bar: 1,
+      },
+    })
+  })
 })

@@ -1,4 +1,4 @@
-export default function objectMergeDeep(base, ...objs) {
+export default function objectMergeDeep(base = {}, ...objs) {
   for (let i = 0, len = objs.length; i < len; ++i) {
     const obj = objs[i]
 
