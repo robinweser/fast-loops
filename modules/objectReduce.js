@@ -1,5 +1,7 @@
 export default function objectReduce(obj, reducer, initialValue) {
-  for (const key in obj) {
+  const keys = Object.keys(obj)
+  for (let i = 0, len = keys.length; i < len; i++) {
+    const key = keys[i]
     initialValue = reducer(initialValue, obj[key], key, obj)
   }
 
